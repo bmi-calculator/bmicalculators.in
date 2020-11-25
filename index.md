@@ -68,35 +68,23 @@ function computeform(form) {
        form.bmi.value=yourbmi;
 
        if (yourbmi >40) {
-          form.my_comment.value="You are grossly obese, consult your physician!";
+          form.my_comment.value="Class 3 Obese, consult your physician!";
        }
 
        else if (yourbmi >30 && yourbmi <=40) {
-          form.my_comment.value="Umm... You are obese, want some liposuction?";
+          form.my_comment.value="Obese.";
        }
 
-       else if (yourbmi >27 && yourbmi <=30) {
-          form.my_comment.value="You are very fat, do something before it's too late";
+       else if (yourbmi >25 && yourbmi <=30) {
+          form.my_comment.value="Overweight";
+       }
+       
+       else if (yourbmi >=18.5 && yourbmi <=24.9) {
+          form.my_comment.value="Healthy weight";
        }
 
-       else if (yourbmi >22 && yourbmi <=27) {
-          form.my_comment.value="You are fat, need dieting and exercise";
-       }
-
-       else if (yourbmi >=21 && yourbmi <=22) {
-          form.my_comment.value="I envy you. Keep it up!!";
-       }
-
-       else if (yourbmi >=18 && yourbmi <21) {
-          form.my_comment.value="You are thin, eat more.";
-       }
-
-       else if (yourbmi >=16 && yourbmi <18) {
-          form.my_comment.value="You are starving. Go Find some food!";
-       }
-
-       else if (yourbmi <16) {
-          form.my_comment.value="You're grossly undernourished, need hospitalization ";
+       else if (yourbmi <18.5) {
+          form.my_comment.value="Underweight";
        }
 
        }
