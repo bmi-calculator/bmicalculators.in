@@ -1,37 +1,105 @@
-## Welcome to GitHub Pages
+Enter your weight in kilograms and your height in centimeters in the form below and press the "Let's see" button (Please read disclaimer below before using this form)
 
-You can use the [editor on GitHub](https://github.com/bmi-calculator/bmicalculators.in/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<FORM NAME="BMI" method=POST>
+<TABLE border=1>
+<TR>
+<TD><DIV ALIGN=CENTER>Your Weight (kg)</DIV></TD>
+<TD><DIV ALIGN=CENTER>Your Height (cm)</DIV></TD>
+<TD><DIV ALIGN=CENTER>Your BMI</DIV></TD>
+<TD><DIV ALIGN=CENTER>My Comment</DIV></TD>
+</TR>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<TR>
+<TD><INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''"></TD>
+<TD><INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''"></TD>
+<TD><INPUT TYPE=TEXT NAME=bmi     SIZE=8 ></TD>
+<TD><INPUT TYPE=TEXT NAME=my_comment size=35></TD>
+</TABLE>
+<P>
+<INPUT TYPE="button" VALUE="Let's see" onClick="computeform(this.form)">
+<INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)">
+</FORM>
+<HR>
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+<SCRIPT LANGUAGE="JAVASCRIPT">
 
-- Bulleted
-- List
+function ClearForm(form){
 
-1. Numbered
-2. List
+    form.weight.value = "";
+    form.height.value = "";
+    form.bmi.value = "";
+    form.my_comment.value = "";
 
-**Bold** and _Italic_ and `Code` text
+}
 
-[Link](url) and ![Image](src)
-```
+function bmi(weight, height) {
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+          bmindx=weight/eval(height*height);
+          return bmindx;
+}
 
-### Jekyll Themes
+function checkform(form) {
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bmi-calculator/bmicalculators.in/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+       if (form.weight.value==null||form.weight.value.length==0 || form.height.value==null||form.height.value.length==0){
+            alert("\nPlease complete the form first");
+            return false;
+       }
 
-### Support or Contact
+       else if (parseFloat(form.height.value) <= 0||
+                parseFloat(form.height.value) >=500||
+                parseFloat(form.weight.value) <= 0||
+                parseFloat(form.weight.value) >=500){
+                alert("\nReally know what you're doing? \nPlease enter values again. \nWeight in kilos and \nheight in cm");
+                ClearForm(form);
+                return false;
+       }
+       return true;
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+}
+
+function computeform(form) {
+
+       if (checkform(form)) {
+
+       yourbmi=Math.round(bmi(form.weight.value, form.height.value/100));
+       form.bmi.value=yourbmi;
+
+       if (yourbmi >40) {
+          form.my_comment.value="You are grossly obese, consult your physician!";
+       }
+
+       else if (yourbmi >30 && yourbmi <=40) {
+          form.my_comment.value="Umm... You are obese, want some liposuction?";
+       }
+
+       else if (yourbmi >27 && yourbmi <=30) {
+          form.my_comment.value="You are very fat, do something before it's too late";
+       }
+
+       else if (yourbmi >22 && yourbmi <=27) {
+          form.my_comment.value="You are fat, need dieting and exercise";
+       }
+
+       else if (yourbmi >=21 && yourbmi <=22) {
+          form.my_comment.value="I envy you. Keep it up!!";
+       }
+
+       else if (yourbmi >=18 && yourbmi <21) {
+          form.my_comment.value="You are thin, eat more.";
+       }
+
+       else if (yourbmi >=16 && yourbmi <18) {
+          form.my_comment.value="You are starving. Go Find some food!";
+       }
+
+       else if (yourbmi <16) {
+          form.my_comment.value="You're grossly undernourished, need hospitalization ";
+       }
+
+       }
+       return;
+}
+</SCRIPT>
