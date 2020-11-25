@@ -1,10 +1,10 @@
 Enter your weight in kilograms and your height in centimeters in the form below and press the "Let's see" button (Please read disclaimer below before using this form)
 
 <FORM NAME="BMI" method=POST>
-
-<label>Your Weight (kg)</label>
+<div>
+<label>Your Weight (kg):</label>
 <INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''">
-    
+</div>
 <label>Your Height (cm)</label>
 <INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''">
 
