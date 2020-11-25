@@ -2,16 +2,16 @@ Enter your weight in kilograms and your height in centimeters in the form below 
 
 <FORM NAME="BMI" method=POST>
 
-    <label>Your Weight (kg)</label>
-    <INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''">
-	<label>Your Height (cm)</label>
-    <INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''">
+<label>Your Weight (kg)</label>
+<INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''">
+<label>Your Height (cm)</label>
+<INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''">
 
-    <label>Your BMI</label>
-    <INPUT TYPE=TEXT NAME=bmi     SIZE=8 disabled>
+<label>Your BMI</label>
+<INPUT TYPE=TEXT NAME=bmi     SIZE=8 disabled>
 
-    <label>My Comment</label>
-    <INPUT TYPE=TEXT NAME=my_comment size=35 disabled>
+<label>My Comment</label>
+<INPUT TYPE=TEXT NAME=my_comment size=35 disabled>
 
     
 <INPUT TYPE="button" VALUE="Let's see" onClick="computeform(this.form)">
