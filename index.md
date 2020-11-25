@@ -13,15 +13,12 @@ Enter your weight in kilograms and your height in centimeters in the form below 
 <TD><INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''"></TD>
 <TD><INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''"></TD>
 <TD><INPUT TYPE=TEXT NAME=bmi     SIZE=8 ></TD>
-<TD><INPUT TYPE=TEXT NAME=my_comment size=35></TD>
-</table>
+<TD><INPUT TYPE=TEXT NAME=my_comment size=35></TD></table>
     
 
     
 <INPUT TYPE="button" VALUE="Let's see" onClick="computeform(this.form)">
-<INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)">
-
-</form>
+<INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)"></form>
     
 <HR>
 
