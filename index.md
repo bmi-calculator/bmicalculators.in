@@ -4,6 +4,7 @@ Enter your weight in kilograms and your height in centimeters in the form below 
 
 <label>Your Weight (kg)</label>
 <INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''">
+    
 <label>Your Height (cm)</label>
 <INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''">
 
@@ -14,7 +15,7 @@ Enter your weight in kilograms and your height in centimeters in the form below 
 <INPUT TYPE=TEXT NAME=my_comment size=35 disabled>
 
     
-<INPUT TYPE="button" VALUE="Let's see" onClick="computeform(this.form)">
+<INPUT TYPE="button" VALUE="Calculate" onClick="computeform(this.form)">
 <INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)">
     
 <HR>
