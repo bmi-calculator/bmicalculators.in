@@ -1,12 +1,6 @@
 Enter your weight in kilograms and your height in centimeters in the form below and press the "Let's see" button (Please read disclaimer below before using this form)
 
 <FORM NAME="BMI" method=POST>
-<TABLE>
-<TR>
-<TD></TD>
-<TD></TD>
-<TD></TD>
-</TR>
 
 <TR>
 <TD>
