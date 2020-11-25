@@ -3,17 +3,23 @@ Enter your weight in kilograms and your height in centimeters in the form below 
 <FORM NAME="BMI" method=POST>
 <TABLE>
 <TR>
-<TD><DIV ALIGN=CENTER>Your Weight (kg)</DIV></TD>
-<TD><DIV ALIGN=CENTER>Your Height (cm)</DIV></TD>
-<TD><DIV ALIGN=CENTER>Your BMI</DIV></TD>
-<TD><DIV ALIGN=CENTER>My Comment</DIV></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
 </TR>
 
 <TR>
-<TD><INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''"></TD>
-<TD><INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''"></TD>
-<TD><INPUT TYPE=TEXT NAME=bmi     SIZE=8 ></TD>
-<TD><INPUT TYPE=TEXT NAME=my_comment size=35></TD>
+<TD>
+    <DIV ALIGN=CENTER>Your Weight (kg)</DIV>
+    <INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''"></TD>
+<TD><DIV ALIGN=CENTER>Your Height (cm)</DIV>
+    <INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''"></TD>
+<TD>
+    <DIV ALIGN=CENTER>Your BMI</DIV>
+    <INPUT TYPE=TEXT NAME=bmi     SIZE=8 disable></TD>
+<TD>
+    <DIV ALIGN=CENTER>My Comment</DIV>
+    <INPUT TYPE=TEXT NAME=my_comment size=35 disable></TD>
 
     
 <INPUT TYPE="button" VALUE="Let's see" onClick="computeform(this.form)">
