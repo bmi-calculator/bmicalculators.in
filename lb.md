@@ -1,27 +1,22 @@
-Enter your weight in pounds and your height in centimeters in the form below and press the "Let's see" button (Please read disclaimer below before using this form)
+Enter your weight in kilograms and your height in centimeters in the form below and press the "Let's see" button (Please read disclaimer below before using this form)
 
 <FORM NAME="BMI" method=POST>
-<TABLE>
-<TR>
-<TD><DIV ALIGN=CENTER>Your Weight (kg)</DIV></TD>
-<TD><DIV ALIGN=CENTER>Your Height (cm)</DIV></TD>
-<TD><DIV ALIGN=CENTER>Your BMI</DIV></TD>
-<TD><DIV ALIGN=CENTER>My Comment</DIV></TD>
-</TR>
+<div>
+<label>Your Weight (kg):</label>
+<INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''">
+</div>
+<label>Your Height (cm)</label>
+<INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''">
 
-<TR>
-<TD><INPUT TYPE=TEXT NAME=weight  SIZE=10 onFocus="this.form.weight.value=''"></TD>
-<TD><INPUT TYPE=TEXT NAME=height  SIZE=10 onFocus="this.form.height.value=''"></TD>
-<TD><INPUT TYPE=TEXT NAME=bmi     SIZE=8 ></TD>
-<TD><INPUT TYPE=TEXT NAME=my_comment size=35></TD>
-</TABLE>
-    
+<label>Your BMI</label>
+<INPUT TYPE=TEXT NAME=bmi     SIZE=8 disabled>
+
+<label>My Comment</label>
+<INPUT TYPE=TEXT NAME=my_comment size=35 disabled>
 
     
-<INPUT TYPE="button" VALUE="Let's see" onClick="computeform(this.form)">
+<INPUT TYPE="button" VALUE="Calculate" onClick="computeform(this.form)">
 <INPUT TYPE="reset"  VALUE="Reset" onClick="ClearForm(this.form)">
-
-</FORM>
     
 <HR>
 
@@ -72,35 +67,23 @@ function computeform(form) {
        form.bmi.value=yourbmi;
 
        if (yourbmi >40) {
-          form.my_comment.value="You are grossly obese, consult your physician!";
+          form.my_comment.value="Class 3 Obese, consult your physician!";
        }
 
        else if (yourbmi >30 && yourbmi <=40) {
-          form.my_comment.value="Umm... You are obese, want some liposuction?";
+          form.my_comment.value="Obese.";
        }
 
-       else if (yourbmi >27 && yourbmi <=30) {
-          form.my_comment.value="You are very fat, do something before it's too late";
+       else if (yourbmi >25 && yourbmi <=30) {
+          form.my_comment.value="Overweight";
+       }
+       
+       else if (yourbmi >=18.5 && yourbmi <=24.9) {
+          form.my_comment.value="Healthy weight";
        }
 
-       else if (yourbmi >22 && yourbmi <=27) {
-          form.my_comment.value="You are fat, need dieting and exercise";
-       }
-
-       else if (yourbmi >=21 && yourbmi <=22) {
-          form.my_comment.value="I envy you. Keep it up!!";
-       }
-
-       else if (yourbmi >=18 && yourbmi <21) {
-          form.my_comment.value="You are thin, eat more.";
-       }
-
-       else if (yourbmi >=16 && yourbmi <18) {
-          form.my_comment.value="You are starving. Go Find some food!";
-       }
-
-       else if (yourbmi <16) {
-          form.my_comment.value="You're grossly undernourished, need hospitalization ";
+       else if (yourbmi <18.5) {
+          form.my_comment.value="Underweight";
        }
 
        }
